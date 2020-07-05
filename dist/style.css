@@ -17,7 +17,8 @@ html, body {
   align-items: center;
   overflow: hidden;
 }
-html::before, body::before {
+
+body::before {
   content: "";
   transform: scale(1.5) rotate(-45deg);
   position: absolute;

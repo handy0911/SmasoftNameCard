@@ -14,17 +14,17 @@ html,body
   justify-content: center
   align-items: center
   overflow: hidden
-  &::before
-    content: ""
-    transform: scale(1.5) rotate(-45deg)
-    position: absolute
-    z-index: 0
-    width: 500%
-    height: 500%
-    background-color: #aaaaaa
-    background-image: url("https://smasoft-tech.com/wp-content/uploads/2017/06/%E5%81%B2%E5%80%A2logo-02.png")
-    filter: opacity(20%)
-    pointer-events: none
+body::before
+  content: ""
+  transform: scale(1.5) rotate(-45deg)
+  position: absolute
+  z-index: 0
+  width: 500%
+  height: 500%
+  background-color: #aaaaaa
+  background-image: url("https://smasoft-tech.com/wp-content/uploads/2017/06/%E5%81%B2%E5%80%A2logo-02.png")
+  filter: opacity(20%)
+  pointer-events: none
 .card
   z-index: 10
   width: 500px
