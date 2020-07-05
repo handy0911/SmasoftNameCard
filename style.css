@@ -1,0 +1,157 @@
+@charset "UTF-8";
+* {
+  font-size: 12px;
+  font-family: 微軟正黑體;
+  position: relative;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+html::before, body::before {
+  content: "";
+  transform: scale(1.5) rotate(-45deg);
+  position: absolute;
+  z-index: 0;
+  width: 500%;
+  height: 500%;
+  background-color: #aaaaaa;
+  background-image: url("https://smasoft-tech.com/wp-content/uploads/2017/06/%E5%81%B2%E5%80%A2logo-02.png");
+  filter: opacity(20%);
+  pointer-events: none;
+}
+
+.card {
+  z-index: 10;
+  width: 500px;
+  height: 310px;
+  background-color: white;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: 1s;
+  cursor: pointer;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+}
+.card:hover {
+  transform: translateY(-30px);
+  transition: 1s;
+}
+.card .face {
+  width: 100%;
+  height: 100%;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  backface-visibility: hidden;
+}
+.card .front {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  transform: rotateY(180deg);
+}
+.card .front .left, .card .front .middle, .card .front .right {
+  height: 50%;
+}
+.card .front .left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card .front .left .top .title {
+  font-size: 10px;
+}
+.card .front .left .top .name {
+  font-size: 15px;
+  text-align: justify;
+  padding: 0px 15px;
+}
+.card .front .left .top .name::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+.card .front .left .bot .egl-title {
+  font-size: 10px;
+  font-stretch: 10%;
+}
+.card .front .left .bot .egl-name {
+  text-align: center;
+}
+.card .front .middle {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.card .front .middle hr {
+  border: 0.5px black solid;
+  height: 100%;
+  margin: 0;
+}
+.card .front .right {
+  flex: 4.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card .front .right .com-name, .card .front .right .mail, .card .front .right .adress, .card .front .right .web {
+  width: 100%;
+  margin: 0;
+  font-size: 12px;
+  text-align: justify;
+  height: 15px;
+}
+.card .front .right .com-name::after, .card .front .right .mail::after, .card .front .right .adress::after, .card .front .right .web::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+.card .front .right .com-name {
+  font-size: 15px;
+}
+.card .front .right .com-eglname {
+  font-size: 12px;
+  letter-spacing: 3.5px;
+}
+.card .front .right .info1, .card .front .right .info2 {
+  display: flex;
+  justify-content: space-between;
+}
+.card .front .right .info1 .num, .card .front .right .info1 .m, .card .front .right .info2 .num, .card .front .right .info2 .m {
+  width: 93px;
+}
+.card .back {
+  background-color: white;
+  transform: rotateY(0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .back img {
+  transform: scale(0.7);
+}
+
+input:checked + .card {
+  transform: rotateY(180deg) translateY(-30px);
+  transition: 1s;
+}
+
+input {
+  display: none;
+}
